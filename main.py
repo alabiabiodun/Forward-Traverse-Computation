@@ -24,7 +24,7 @@ dms = degrees2dms.deg2dms
 #from functools import partial
 
 deg = dms2degrees.dms2deg
-#df = pd.read_excel('C:\\Users\\Alabi\\Desktop\\data999.xls',header = None, names = ['Distance','deg','mins','secs','Easting','Northing','ID'], na_values = ['',''], index = False)
+#df = pd.read_excel('C:\\Users\\Alabi\\Desktop\\data999.xls',header = None, names = ['Distance','deg','mins','secs','Easting','Northing','ID'], na_values = ['',''])
 #df.fillna(0)
 #r,c = df.shape
 
@@ -77,7 +77,7 @@ class coordinatesComputation:
     
     def Coordinates(self):
         for i in range(self.r-2):
-            if len(str(int(self.df.iloc[i+1,0]))) is 1 :
+            if len(str(int(self.df.iloc[i+1,0]))) == 1 :
               
                 print('0%0.3f'%self.df.iloc[i+1,0],'\t\t','{}'.format(dms(deg([self.df.iloc[i+1,1],self.df.iloc[i+1,2],self.df.iloc[i+1,3]]))),'\t','%0.3f'%self.df.iloc[i+1,4],'\t','%0.3f'%self.df.iloc[i+1,5],'\t',self.df.iloc[i+1,6])
             
